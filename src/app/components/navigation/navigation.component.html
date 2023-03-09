@@ -1,0 +1,51 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav >
+    <mat-nav-list (click)="sidenav.close()">
+      <a mat-list-item routerLink="/">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </a>
+
+      <a mat-list-item routerLink="/about">
+        <mat-icon>question_answer</mat-icon>
+        <span>About</span>
+      </a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.open()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <a mat-button routerLink="/">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </a>
+
+    <a mat-button routerLink="/about">
+      <mat-icon>question_answer</mat-icon>
+      <span>About</span>
+    </a>
+
+    <a mat-button [matMenuTriggerFor]="matMenu">
+      <span>Screens</span>
+    </a>
+
+    <mat-menu #matMenu>
+      <mat-list-item routerLink="/">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+      </mat-list-item>
+
+      <mat-list-item routerLink="/about">
+          <mat-icon>question_answer</mat-icon>
+          <span>About</span>
+      </mat-list-item>
+    </mat-menu>
+  </mat-toolbar>
+
+  <router-outlet></router-outlet>
+
+</mat-sidenav-container>
